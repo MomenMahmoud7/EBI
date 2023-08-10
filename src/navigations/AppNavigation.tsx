@@ -7,6 +7,7 @@ import Category from '@app/screens/Category';
 import Home from '@app/screens/Home';
 import Result from '@app/screens/Result';
 import {selectSaved} from '@app/store/selectors/selected';
+import colors from '@app/theme/colors';
 
 const Stack = createStackNavigator();
 
@@ -17,10 +18,9 @@ const AppNavigation = () => {
     <Stack.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerStyle: {backgroundColor: 'transparent'},
         title: '',
         headerLeft: BackButton,
-        headerLeftLabelVisible: false,
+        headerStyle: {backgroundColor: colors.transparent, elevation: 0},
       }}>
       {saved ? (
         <Stack.Screen
