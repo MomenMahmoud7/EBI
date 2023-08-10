@@ -1,12 +1,11 @@
 # Preview
 
 ### For Android
-
 https://github.com/MomenMahmoud7/EBI/assets/42410999/2604e880-83fe-47a7-8f76-9183665cae14
 
 ### For iOS
-
 https://github.com/MomenMahmoud7/EBI/assets/42410999/b96c3050-47f1-462e-921a-912e2b4d21e8
+
 
 # Getting Started
 
