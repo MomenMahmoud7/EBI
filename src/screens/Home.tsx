@@ -4,8 +4,9 @@ import {useDispatch, useSelector} from 'react-redux';
 
 import Button from '@app/components/Button';
 import CategoryCard from '@app/components/CategoryCard';
+import Error from '@app/components/Error';
 import Header from '@app/components/Header';
-import Text from '@app/components/Text';
+import Loading from '@app/components/Loading';
 import useCalculateSum from '@app/hooks/useCalculateSum';
 import {startFetchingCategories} from '@app/store/actions/categories';
 import {saveSelected} from '@app/store/actions/selected';
@@ -15,7 +16,11 @@ import UNIT from '@app/theme/unit';
 const Home = () => {
   const dispatch = useDispatch();
 
-  const {isLoading, data, error} = useSelector(selectCategories);
+  const {
+    isLoading,
+    data,
+    error = 'Something went wrong',
+  } = useSelector(selectCategories);
 
   useEffect(() => {
     dispatch(startFetchingCategories());
@@ -28,11 +33,11 @@ const Home = () => {
   };
 
   if (isLoading) {
-    return <Text>Loading...</Text>;
+    return <Loading />;
   }
 
   if (error) {
-    return <Text>{error}</Text>;
+    return <Error error={error} />;
   }
 
   return (

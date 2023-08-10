@@ -6,6 +6,7 @@ const colors = {
   text: 'rgb(75, 75, 75)',
   primary: 'rgba(94,163,168,255)',
   transparent: 'transparent',
+  danger: 'rgba(205, 0, 0, 1)',
 };
 
 export default colors;

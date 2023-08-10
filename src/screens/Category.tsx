@@ -4,8 +4,9 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useSelector} from 'react-redux';
 
 import CategoryItemCard from '@app/components/CategoryItemCard';
+import Error from '@app/components/Error';
 import Header from '@app/components/Header';
-import Text from '@app/components/Text';
+import Loading from '@app/components/Loading';
 import useCalculateCategorySum from '@app/hooks/useCalculateCategorySum';
 import useRoute from '@app/hooks/useRoute';
 import {selectCategoryItems} from '@app/store/selectors/categoryItems';
@@ -22,11 +23,11 @@ const Category = () => {
   const {min, max} = useCalculateCategorySum(id);
 
   if (isLoading) {
-    return <Text>Loading...</Text>;
+    return <Loading />;
   }
 
   if (error) {
-    return <Text>{error}</Text>;
+    return <Error error={error} />;
   }
 
   return (
