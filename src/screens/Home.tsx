@@ -10,6 +10,7 @@ import useCalculateSum from '@app/hooks/useCalculateSum';
 import {startFetchingCategories} from '@app/store/actions/categories';
 import {saveSelected} from '@app/store/actions/selected';
 import {selectCategories} from '@app/store/selectors/categories';
+import UNIT from '@app/theme/unit';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexWrap: 'wrap',
     flexDirection: 'row',
-    padding: 8,
+    padding: 8 * UNIT,
   },
 });
 

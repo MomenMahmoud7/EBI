@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import Text from '@app/components/Text';
+import UNIT from '@app/theme/unit';
 
 type HeaderPropsType = {
   title: string;
@@ -31,16 +32,16 @@ cost estimate.`}
 const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
-    marginBottom: 14,
+    marginBottom: 14 * UNIT,
   },
   subTitle: {
     textAlign: 'center',
-    lineHeight: 22,
-    marginBottom: 34,
+    lineHeight: 22 * UNIT,
+    marginBottom: 34 * UNIT,
   },
   cost: {
     textAlign: 'center',
-    marginBottom: 32,
+    marginBottom: 32 * UNIT,
   },
 });
 

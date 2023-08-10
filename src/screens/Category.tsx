@@ -9,6 +9,7 @@ import Text from '@app/components/Text';
 import useCalculateCategorySum from '@app/hooks/useCalculateCategorySum';
 import useRoute from '@app/hooks/useRoute';
 import {selectCategoryItems} from '@app/store/selectors/categoryItems';
+import UNIT from '@app/theme/unit';
 
 const Category = () => {
   const {
@@ -30,7 +31,7 @@ const Category = () => {
 
   return (
     <ScrollView
-      contentContainerStyle={[styles.container, {paddingBottom: bottom}]}
+      contentContainerStyle={{paddingBottom: bottom}}
       showsVerticalScrollIndicator={false}>
       <Header title={title} min={min} max={max} />
       <View style={styles.content}>
@@ -43,16 +44,13 @@ const Category = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flexGrow: 1,
-  },
   header: {
     alignItems: 'center',
   },
   content: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    padding: 8,
+    padding: 8 * UNIT,
   },
 });
 

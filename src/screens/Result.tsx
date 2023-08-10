@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dimensions, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {faStar} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
@@ -9,6 +9,7 @@ import Text from '@app/components/Text';
 import useCalculateSum from '@app/hooks/useCalculateSum';
 import {saveSelected} from '@app/store/actions/selected';
 import colors from '@app/theme/colors';
+import UNIT, {SCREEN_WIDTH} from '@app/theme/unit';
 
 const Result = () => {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ const Result = () => {
               max ? max.toLocaleString() : ''
             }`}
           </Text>
-          <FontAwesomeIcon icon={faStar} size={36} />
+          <FontAwesomeIcon icon={faStar} size={36 * UNIT} />
         </View>
       </View>
       <Button onPress={onEdit}>Edit</Button>
@@ -52,9 +53,9 @@ const styles = StyleSheet.create({
   },
   circle: {
     position: 'absolute',
-    borderRadius: Dimensions.get('screen').width * 0.6,
-    width: Dimensions.get('screen').width * 0.6,
-    height: Dimensions.get('screen').width * 0.6,
+    borderRadius: SCREEN_WIDTH * 0.6,
+    width: SCREEN_WIDTH * 0.6,
+    height: SCREEN_WIDTH * 0.6,
     backgroundColor: colors.white,
   },
   content: {
@@ -62,7 +63,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   marginBottom: {
-    marginBottom: 20,
+    marginBottom: 20 * UNIT,
   },
 });
 

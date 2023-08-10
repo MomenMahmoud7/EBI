@@ -2,6 +2,7 @@ import React, {FC, PropsWithChildren} from 'react';
 import {StyleSheet, Text as NativeText, TextStyle} from 'react-native';
 
 import colors from '@app/theme/colors';
+import UNIT from '@app/theme/unit';
 
 type TextPropsType = {
   style?: TextStyle;
@@ -35,16 +36,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   small: {
-    fontSize: 14,
+    fontSize: 14 * UNIT,
   },
   normal: {
-    fontSize: 15,
+    fontSize: 15 * UNIT,
   },
   large: {
-    fontSize: 18,
+    fontSize: 18 * UNIT,
   },
   xlarge: {
-    fontSize: 32,
+    fontSize: 32 * UNIT,
   },
 });
 

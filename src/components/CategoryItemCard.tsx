@@ -15,6 +15,7 @@ import Text from '@app/components/Text';
 import {addSelected, removeSelected} from '@app/store/actions/selected';
 import {selectSelected} from '@app/store/selectors/selected';
 import colors from '@app/theme/colors';
+import UNIT from '@app/theme/unit';
 import {CategoryItemType} from '@app/types/Category.type';
 
 const CategoryItemCard: FC<CategoryItemType & {parentId: number}> = ({
@@ -28,7 +29,7 @@ const CategoryItemCard: FC<CategoryItemType & {parentId: number}> = ({
 
   const width = useMemo(() => {
     const screenWidth = Dimensions.get('screen').width;
-    return (screenWidth - 48) / 2;
+    return (screenWidth - 48 * UNIT) / 2;
   }, []);
 
   const isCategoryItemSelected = useMemo(
@@ -74,9 +75,9 @@ const CategoryItemCard: FC<CategoryItemType & {parentId: number}> = ({
 const styles = StyleSheet.create({
   container: {
     position: 'relative',
-    margin: 8,
-    borderWidth: 2,
-    borderRadius: 6,
+    margin: 8 * UNIT,
+    borderWidth: 2 * UNIT,
+    borderRadius: 6 * UNIT,
     borderColor: colors.lightgray,
   },
   selected: {
@@ -84,24 +85,24 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    top: 10,
-    right: 10,
-    padding: 6,
+    top: 10 * UNIT,
+    right: 10 * UNIT,
+    padding: 6 * UNIT,
     zIndex: 100,
-    borderRadius: 20,
+    borderRadius: 20 * UNIT,
     backgroundColor: colors.lightblack,
   },
   imageWrapper: {
     overflow: 'hidden',
-    borderTopLeftRadius: 6,
-    borderTopRightRadius: 6,
+    borderTopLeftRadius: 6 * UNIT,
+    borderTopRightRadius: 6 * UNIT,
   },
   image: {
-    height: 110,
+    height: 110 * UNIT,
     width: '100%',
   },
   content: {
-    padding: 12,
+    padding: 12 * UNIT,
   },
 });
 

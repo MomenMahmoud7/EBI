@@ -15,6 +15,7 @@ import useNavigation from '@app/hooks/useNavigation';
 import {startFetchingCategoryItems} from '@app/store/actions/categoryItems';
 import {selectSelected} from '@app/store/selectors/selected';
 import colors from '@app/theme/colors';
+import UNIT from '@app/theme/unit';
 import {CategoryType} from '@app/types/Category.type';
 
 const CategoryCard: FC<CategoryType> = ({id, title, image}) => {
@@ -26,7 +27,7 @@ const CategoryCard: FC<CategoryType> = ({id, title, image}) => {
 
   const width = useMemo(() => {
     const screenWidth = Dimensions.get('screen').width;
-    return (screenWidth - 48) / 2;
+    return (screenWidth - 48 * UNIT) / 2;
   }, []);
 
   return (
@@ -49,9 +50,9 @@ const CategoryCard: FC<CategoryType> = ({id, title, image}) => {
 
 const styles = StyleSheet.create({
   container: {
-    margin: 8,
-    borderWidth: 2,
-    borderRadius: 6,
+    margin: 8 * UNIT,
+    borderWidth: 2 * UNIT,
+    borderRadius: 6 * UNIT,
     borderColor: colors.lightgray,
   },
   selected: {
@@ -59,17 +60,17 @@ const styles = StyleSheet.create({
   },
   imageWrapper: {
     overflow: 'hidden',
-    borderTopLeftRadius: 6,
-    borderTopRightRadius: 6,
+    borderTopLeftRadius: 6 * UNIT,
+    borderTopRightRadius: 6 * UNIT,
   },
   image: {
-    height: 110,
+    height: 110 * UNIT,
     width: '100%',
   },
   content: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: 12,
+    padding: 12 * UNIT,
   },
 });
 
